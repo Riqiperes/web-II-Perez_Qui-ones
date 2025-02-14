@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lista de Usuarios</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <h1>Lista de Usuarios</h1>
+    
+    <div class="users-list">
+        {% for user in users %}
+        <div class="user">
+            <img src="{{ user.photo }}" alt="User Image">
+            <p>ID: {{ user.id }}</p>
+            <p>Age: {{ user.age }}</p>
+        </div>
+        {% endfor %}
+    </div>
+</body>
+</html>
