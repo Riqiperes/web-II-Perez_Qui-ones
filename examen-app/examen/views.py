@@ -6,14 +6,14 @@ def index(request):
     return HttpResponse("Hola, mundo. Esta es la página de inicio de la aplicación examen.")
 
 def boletos(request):
-    boletos = Boleto.objects.all()  # Recupera todos los boletos desde la base de datos
+    boletos = Boleto.objects.all() 
     for i, boleto in enumerate(boletos, start=1):
-        boleto.name = f"Boleto {i}"  # Asigna nombres secuenciales a cada boleto
+        boleto.name = f"Boleto {i}" 
     data = {
         "boletos": boletos,
         "titulo": "Lista de Boletos",
         "total_boletos": boletos.count(),
-        "total_eventos": 10,  # Ejemplo de dato adicional
+        "total_eventos": 19,
         "eventos": [
             {
                 "id": 1, "name": "Evento 1", "image": 'images/boletos.jpg'
