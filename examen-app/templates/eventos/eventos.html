@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos</title>
+    <link rel="stylesheet" href="{% static 'css/style2.css' %}">
+</head>
+<body>
+    
+    {% include 'base/header.html' %}
+
+    <main>
+        <div class="container">
+            
+            <h1>Eventos</h1>
+            <p>Eventos: {{ total_eventos }}</p>
+
+            <div class="eventos-list">
+                {% for evento in eventos %}
+                
+                    <div class="evento-item">
+                        <img src="{% static 'images/imagen2.jpg' %}" alt="Imagen de Evento">
+                        
+                        <div class="evento-info">
+                            <h2>{{ evento.name }}</h2>
+                            <p><strong>Localidad:</strong> {{evento.localidad}}</p>
+                            <p><strong>Fecha:</strong> {{ evento.fecha_inicio }} al {{ evento.fecha_fin }}</p>
+                            <p>
+                                <strong>Descripción:</strong> Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+                                Debitis, enim? Nisi officia at nihil, natus sequi deleniti modi rerum placeat est.
+                            </p>
+                            <a class="btn-boletos">Comprar</a>
+                        </div>
+                    </div>
+
+                {% endfor %}
+            </div>
+
+        </div>
+    </main>
+
+    {% include 'base/footer.html' %}
+
+</body>
+</html>
